@@ -11,6 +11,10 @@ const Blog = () => {
                 <h1 className='text-2xl mb-2'>Q: Why are you using firebase? What other options do you have to implement authentication??</h1>
                 <p className='text-lg'> Ans: Firebase helps you develop high-quality apps, grow your user base, and earn more money. Each feature works independently, and they work even better together. Firebase Authentication provides backend services, easy-to-use SDKs, and ready-made UI libraries to authenticate users to your app. It supports authentication using passwords, phone numbers, popular federated identity providers like Google, Facebook and Twitter, and more..</p>
             </div>
+            <div className='mt-8 p-4 bg-zinc-300 drop-shadow-2xl'>
+                <h1 className='text-2xl mb-2'>Q: How does the private route work?</h1>
+                <p className='text-lg'> Ans: The private route component is similar to the public route, the only change is that redirect URL and authenticate condition. If the user is not authenticated he will be redirected to the login page and the user can only access the authenticated routes If he is authenticated (Logged in). Public and Private routes will also restrict accessing the previously visited routes using the browser back button after logout. I hope you have found this useful. Thank you for reading.</p>
+            </div>
         </div>
     );
 };
