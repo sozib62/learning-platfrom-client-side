@@ -3,8 +3,6 @@ import React, { useContext } from 'react';
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../../../Context/AuthProvider/AuthProvider';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faGoogle, faUser } from '@fortawesome/free-solid-svg-icons'
 
 const Register = () => {
 
@@ -12,27 +10,7 @@ const Register = () => {
 
     const [accept, setAccept] = useState(false);
 
-    const { providerLogin, userInfo, createNewUser, githubLogin } = useContext(AuthContext)
-
-    const googleProvider = new GoogleAuthProvider()
-    const githubProvider = new GoogleAuthProvider()
-
-    const handleGoogleSignIn = () => {
-        providerLogin(googleProvider)
-            .then(result => {
-                const user = result.user;
-                console.log(user);
-            })
-            .catch(e => console.error(e))
-    }
-    const handleGithubSignIn = () => {
-        githubLogin(githubProvider)
-            .then(result => {
-                const user = result.user;
-                console.log(user);
-            })
-            .catch(e => console.error(e))
-    }
+    const { userInfo, createNewUser } = useContext(AuthContext)
 
     const handleSubmit = event => {
         event.preventDefault();
@@ -114,10 +92,6 @@ const Register = () => {
                         </div>
                         <div className="form-control mt-6">
                             <button className="btn btn-primary" disabled={!accept}>Register</button>
-                        </div>
-                        <div>
-                            <button onClick={handleGoogleSignIn} className="btn btn-outline btn-primary w-full">Sign In With Google</button>
-                            <button onClick={handleGithubSignIn} className="btn btn-outline btn-primary w-full">Sign In With Github</button>
                         </div>
                     </div>
                 </div>
