@@ -14,7 +14,7 @@ const Home = () => {
                     fileName='file'
                 ></DownloadPage>
             </div>
-            <div id='element' className=' grid grid-cols-3 gap-10 ml-48 mt-20 '>
+            <div id='element' className=' grid grid-cols-1 lg:grid-cols-3 gap-10 ml-48 mt-20 '>
 
                 {
                     course.map(cor => <CourseDisplay
