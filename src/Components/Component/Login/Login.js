@@ -8,16 +8,25 @@ const Login = () => {
 
     const [error, setError] = useState('')
 
-    const { loginUser, providerLogin } = useContext(AuthContext)
+    const { loginUser, providerLogin, githubLogin } = useContext(AuthContext)
     const navigate = useNavigate();
     const location = useLocation();
 
     const from = location.state?.from?.pathname || '/';
 
     const googleProvider = new GoogleAuthProvider()
+    const githubProvider = new GoogleAuthProvider()
 
     const handleGoogleSignIn = () => {
         providerLogin(googleProvider)
+            .then(result => {
+                const user = result.user;
+                console.log(user);
+            })
+            .catch(e => console.error(e))
+    }
+    const handleGithubSignIn = () => {
+        githubLogin(githubProvider)
             .then(result => {
                 const user = result.user;
                 console.log(user);
@@ -76,6 +85,7 @@ const Login = () => {
                         </div>
                         <div>
                             <button onClick={handleGoogleSignIn} className="btn btn-outline btn-primary w-full">Sign In With Google</button>
+                            <button onClick={handleGithubSignIn} className="btn btn-outline btn-primary w-full">Sign In With Github</button>
                         </div>
                     </div>
                 </form>

@@ -3,7 +3,6 @@ import React, { useContext } from 'react';
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../../../Context/AuthProvider/AuthProvider';
-
 const Register = () => {
 
     const [error, setError] = useState('');
@@ -11,6 +10,8 @@ const Register = () => {
     const [accept, setAccept] = useState(false);
 
     const { userInfo, createNewUser } = useContext(AuthContext)
+
+
 
     const handleSubmit = event => {
         event.preventDefault();
