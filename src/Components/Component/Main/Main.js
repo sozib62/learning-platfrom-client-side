@@ -2,15 +2,16 @@ import React from 'react';
 import { Outlet } from 'react-router-dom';
 import Header from '../Header/Header';
 import SideNav from '../SideNav/SideNav';
+import './Main.css'
 
 const Main = () => {
     return (
         <div>
             <Header></Header>
 
-            <div className='flex mx-8'>
+            <div className=' res flex mx-8'>
                 <SideNav></SideNav>
-                <Outlet></Outlet>
+                <Outlet className='out'></Outlet>
 
             </div>
         </div>

@@ -14,9 +14,9 @@ const SideNav = () => {
     }, [])
 
     return (
-        <div className=' m-10'>
+        <div className=' m-10 '>
             {
-                categories.map(category => <p className='my-10 text-2xl sm:flex' key={category.id}>
+                categories.map(category => <p className='my-10 text-2xl' key={category.id}>
                     <Link to={`/courses/${category.id}`}>{category.title}</Link>
                 </p>)
             }

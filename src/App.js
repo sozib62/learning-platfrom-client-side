@@ -28,7 +28,7 @@ function App() {
         },
         {
           path: '/course',
-          element: <PrivateRoute><Courses></Courses></PrivateRoute>,
+          element: <Courses></Courses>,
           loader: () => fetch(' https://assignment-server-10-tau.vercel.app/course')
         },
         {

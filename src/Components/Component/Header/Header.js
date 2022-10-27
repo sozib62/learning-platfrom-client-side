@@ -5,8 +5,6 @@ import { useContext } from 'react';
 import { AuthContext } from '../../../Context/AuthProvider/AuthProvider';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faUser } from '@fortawesome/free-solid-svg-icons'
-import DownloadPage from '../Download/DownloadPage';
-
 const Header = () => {
 
     const { user, logOut } = useContext(AuthContext)
